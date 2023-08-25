@@ -1,29 +1,33 @@
-/////////////////////////////////////////////////
-//  Displey numbar;
-//1,2,3,4......n
-//Using loop ex for loop 
-// out of main class that is use class
-///////////////////////////////////////////////
-
 #include<iostream>
 using namespace std;
-
-class Displey
+class Check
 {
     public:
-     void DispleyX()
+   bool CheckNumbar(int no1)
     {
-        int i=0;
-        for(i=1;i<7;i++)
+        if((no1%3)==0 && ((no1%5)==0))
         {
-             cout<<i<<"\n";
+            return true;
         }
-        
+        else{
+            return false;
+        }
     }
 };
 int main()
 {
-Displey obj;
-obj.DispleyX();
-   
+    bool iret=true;
+    int inum=0;
+    cout<<"Enter thr numbar that want you check:";
+    cin>>inum;
+    Check obj;
+    iret=obj.CheckNumbar(inum);
+    if(iret==true)
+    {
+        printf("the numbar are Divisbal by 3 and 5:");
+    }else if (iret==false){
+        printf("the numbar are not Divisbal by 3 and 5:");
+    }
+
+    return 0;
 }
